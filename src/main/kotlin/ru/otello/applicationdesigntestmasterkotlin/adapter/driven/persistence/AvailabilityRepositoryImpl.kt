@@ -1,7 +1,7 @@
 package ru.otello.applicationdesigntestmasterkotlin.adapter.driven.persistence
 
 import org.springframework.stereotype.Component
-import ru.otello.applicationdesigntestmasterkotlin.application.domain.RoomAvailability
+import ru.otello.applicationdesigntestmasterkotlin.adapter.driven.persistence.entity.RoomAvailabilityEntity
 import ru.otello.applicationdesigntestmasterkotlin.application.ports.AvailabilityRepository
 import java.time.LocalDate
 
@@ -9,11 +9,11 @@ import java.time.LocalDate
 class AvailabilityRepositoryImpl : AvailabilityRepository {
 
     private val availability = mutableListOf(
-        RoomAvailability("reddison", "lux", LocalDate.parse("2024-01-01"), 1),
-        RoomAvailability("reddison", "lux", LocalDate.parse("2024-01-02"), 1),
-        RoomAvailability("reddison", "lux", LocalDate.parse("2024-01-03"), 1),
-        RoomAvailability("reddison", "lux", LocalDate.parse("2024-01-04"), 1),
-        RoomAvailability("reddison", "lux", LocalDate.parse("2024-01-05"), 0)
+        RoomAvailabilityEntity("reddison", "lux", LocalDate.parse("2024-01-01"), 1),
+        RoomAvailabilityEntity("reddison", "lux", LocalDate.parse("2024-01-02"), 1),
+        RoomAvailabilityEntity("reddison", "lux", LocalDate.parse("2024-01-03"), 1),
+        RoomAvailabilityEntity("reddison", "lux", LocalDate.parse("2024-01-04"), 1),
+        RoomAvailabilityEntity("reddison", "lux", LocalDate.parse("2024-01-05"), 0)
     )
 
     override fun findUnavalableDays(daysToBook: List<LocalDate>): Collection<LocalDate> {

@@ -1,11 +1,11 @@
-package ru.otello.applicationdesigntestmasterkotlin.adapter.driver.rest.mapper
+package ru.otello.applicationdesigntestmasterkotlin.adapter.driven.persistence.entity.mapper
 
-import ru.otello.applicationdesigntestmasterkotlin.adapter.driver.rest.request.OrderRequest
+import ru.otello.applicationdesigntestmasterkotlin.adapter.driven.persistence.entity.OrderEntity
 import ru.otello.applicationdesigntestmasterkotlin.application.domain.Order
 
-object OrderRequestMapper {
+object OrderEntityMapper {
 
-    fun OrderRequest.toOrder() =
+    fun OrderEntity.toDomain() =
         Order(
             hotelId = hotelId,
             roomId = roomId,
@@ -14,8 +14,8 @@ object OrderRequestMapper {
             to = to,
         )
 
-    fun Order.toApiRequest() =
-        OrderRequest(
+    fun Order.toEntity() =
+        OrderEntity(
             hotelId = hotelId,
             roomId = roomId,
             email = email,
